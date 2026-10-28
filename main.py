@@ -22,12 +22,12 @@ Base = declarative_base()
 class ProductModel(Base):
     __tablename__ = "products"
     id = Column(Integer, primary_key=True, index=True)
-    name = Column(String, nullable=False)
-    sku = Column(String, unique=True, nullable=False, index=True)
-    category = Column(String, nullable=False)
+    name = Column(String(255), nullable=False)
+    sku = Column(String(255), unique=True, nullable=False, index=True)
+    category = Column(String(255), nullable=False)
     price = Column(Float, nullable=False)
     quantity = Column(Integer, default=0)
-    description = Column(String, nullable=True)
+    description = Column(String(255), nullable=True)
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
